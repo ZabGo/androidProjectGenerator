@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.0.0"
+    }
+  }
+}
+
 resource "null_resource" "step-1" {
   provisioner "local-exec" {
     command = "git clone ${var.android-template-repository} ./temp"
